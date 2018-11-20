@@ -1,16 +1,5 @@
-# b=2
+import math;
+import random;
 
-def external():
-    b = 100
-
-    def internal():
-        nonlocal b
-        print(b)
-        b = 300
-        return b
-    internal()
-    print(b)
-
-
-external()
-print(b)
+a = random.choice(range(10))
+print(a)
