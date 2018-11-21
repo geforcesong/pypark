@@ -1,5 +1,2 @@
-import math;
-import random;
-
-a = random.choice(range(10))
-print(a)
+import utils.module2
+print(__name__)
