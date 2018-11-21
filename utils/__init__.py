@@ -1,1 +1,1 @@
-__all__ = ['module2']
+__all__ = ['module2', 'mmm3']
