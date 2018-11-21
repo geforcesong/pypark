@@ -11,5 +11,5 @@ disp1()
 
 module2.display() # pylint: disable=E0602
 mmm3.displayM() # pylint: disable=E0602
-utils.module2.display();
+utils.module2.display()
 display()
