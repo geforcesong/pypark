@@ -1,9 +1,12 @@
 class Parent:
     parentAttr = 100
+    __privateAttr = 120
 
     def __init__(self, name):
         print('调用基类构造函数')
         self.name = name
+        self.__privateAttr = 150
+        print(Parent.__privateAttr)
     
     def parentMethod(self):
         print('调用父类方法')
@@ -14,6 +17,9 @@ class Parent:
     def getAttr(self):
         print("父类属性:", Parent.parentAttr)
         return Parent.parentAttr
+    
+    def getPrivate(self):
+        return self.__privateAttr
 
 class Child(Parent):
     def __init__(self, name):
@@ -29,6 +35,12 @@ class Child(Parent):
         super(Child, self).getAttr() #较好的写法
         print('覆盖父类方法属性')
         return 200
+    
+    '''
+    Python不允许实例化的类访问私有数据，但你可以使用 object._className__attrName（ 对象名._类名__私有属性名 ）访问属性
+    def getPrivate(self):
+        return self._Parent__privateAttr
+    '''
 
 p = Child('George')
 p.childMethod()
@@ -36,3 +48,7 @@ print("Name:", p.name)
 
 c= p.getAttr()
 print('attr:', c)
+
+print('public attr:', p.parentAttr)
+print('private attr:', p.getPrivate())
+
