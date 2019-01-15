@@ -1,3 +1,5 @@
+import time
+
 def simple(func):
     def wrapper(*args, **kw):
         print('call %s():' % func.__name__)
@@ -12,6 +14,16 @@ def log(text, num):
         return wrapper
     return decorator
 
+def perf(func):
+    def wrapper(*args, **kw):
+        startTime = time.time()
+        ret = func(*args, **kw)
+        print ('total is:', time.time() -  startTime)
+        return ret
+    return wrapper
+
+@perf
+@simple
 @log('12312', 456)
 def is_odd(n):
     return n % 2 == 1
