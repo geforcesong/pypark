@@ -26,3 +26,6 @@ print(day1)
 
 day2 =Weekday['Tue']
 print(day2, day2.name, day2.value)
+
+day3 = Weekday(5)
+print(day3, day3.name, day3.value)
