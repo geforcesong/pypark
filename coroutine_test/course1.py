@@ -12,6 +12,7 @@ async def do_some_work(x):
 start = now()
 
 coroutine = do_some_work(2)
+print(coroutine)
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(coroutine)
