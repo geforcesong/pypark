@@ -6,8 +6,11 @@ class Spam:
 
     def printNumInstances():
         print('%s instances created!' % Spam.numInstances)
-
     printNumInstances = staticmethod(printNumInstances)
+
+    def classFunc(cls, x):
+        print(cls, x)
+    classFunc= classmethod(classFunc)
 
 a = Spam()
 b = Spam() 
@@ -21,3 +24,6 @@ class B(Spam): pass
 
 e = B()
 e.printNumInstances()
+
+Spam.classFunc(100)
+B.classFunc(200)
