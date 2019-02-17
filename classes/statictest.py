@@ -25,5 +25,5 @@ class B(Spam): pass
 e = B()
 e.printNumInstances()
 
-Spam.classFunc(100)
+Spam.classFunc(100) # python automatically passed class as 1st parameter
 B.classFunc(200)
