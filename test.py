@@ -1,14 +1,14 @@
-class Person:
+class A:
+    attr =1
 
-    def say(self, name):
-        print('Hello', name)
+class B(A):
+    pass
 
+class C(A):
+    pass
 
-c= Person()
-c.say('GG')
+class D(B, C):
+    pass
 
-Person.say(c, 'MM')
-
-
-d = eval('Person()')
-d.say('D.D')
+x=D()
+print(x.attr)
