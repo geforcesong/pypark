@@ -12,6 +12,10 @@ class Spam:
         print(cls, x)
     classFunc= classmethod(classFunc)
 
+    @staticmethod
+    def easywayStaticFunc():
+        print('this is easier way to implement the class static method')
+
 a = Spam()
 b = Spam() 
 c = Spam()
@@ -27,3 +31,5 @@ e.printNumInstances()
 
 Spam.classFunc(100) # python automatically passed class as 1st parameter
 B.classFunc(200)
+
+Spam.easywayStaticFunc()
