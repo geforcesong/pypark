@@ -14,6 +14,6 @@ except Error100 as e:
     print('100 error except:', e)
 else:  # will run when no error happens
     print('no errors')
-finally:
+finally: # always run
     print('finally...')
 print('END')
