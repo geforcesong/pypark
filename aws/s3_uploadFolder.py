@@ -11,5 +11,6 @@ for (path, dirs, files) in os.walk(root_dir):
         print('uploading...' + fullPath)
         s3path = os.path.join(s3_uploaded_root, fullPath.replace(
             root_dir, '')).strip('/')
-        s3.meta.client.upload_file(fullPath, 'diann', s3path, ExtraArgs={'ACL': 'public-read'})
+        s3.meta.client.upload_file(fullPath, 'diann', s3path, ExtraArgs={
+                                   'ACL': 'public-read', 'ContentType': 'image/jpeg'})
         print('done!')
