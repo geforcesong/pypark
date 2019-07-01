@@ -1,3 +1,4 @@
+#you need set up amazon cli before using this. it will be generating .aws under ~ folder
 import boto3
 
 # list all bucket names
